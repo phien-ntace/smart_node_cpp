@@ -2,6 +2,7 @@
 
 #include "hal/led_controller.h"
 #include "hal/bh1750.h"
+#include "hal/ili9341.h"
 
 int main(void)
 {
