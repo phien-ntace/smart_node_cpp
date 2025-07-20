@@ -3,6 +3,7 @@
 #include "hal/led_controller.h"
 #include "hal/bh1750.h"
 #include "hal/ili9341.h"
+#include "hal/dht11.h"
 
 int main(void)
 {
@@ -67,6 +68,22 @@ int main(void)
     //     cout << "LCDD" << endl; 
     //     sleep(1);
     // }
+
+    // ************* Test DHT11 *************
+    Dht11Sensor *dht11_sensor = new Dht11Sensor(4);
+    while (1)
+    {
+        int temp, humid;
+        int ret = dht11_sensor->read(temp, humid);
+        if (ret < 0)
+            cout << "Could not read DHT11: " << ret << endl;
+        else {
+            cout << "Temperature: " << temp << endl;
+            cout << "Humid: " << humid << endl;
+        }
+        sleep(1);
+    }
+    
 
     return 0;
 }
