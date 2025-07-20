@@ -27,7 +27,4 @@ public:
     int set_enable(bool state);
 };
 
-
-
-
 #endif

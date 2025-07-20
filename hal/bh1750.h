@@ -11,6 +11,7 @@
 #include <time.h>
 #include "../global_variable.h"
 
+
 using namespace std; 
 
 
@@ -18,6 +19,7 @@ class BH1750 {
 public:
     explicit BH1750(int address = BH1750_ADDR_1);
     ~BH1750();
+    int init();
     int set_resolution_mode(int cmd = BH1750_H_RESOLUTION);
     int read_light_level();
 

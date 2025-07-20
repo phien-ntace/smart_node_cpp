@@ -4,8 +4,11 @@ TARGET = smart_node
 # Compiler
 CXX = g++
 
+# Linker flags
+LDFLAGS = -lgpiod
+
 # List of source file
-SRCS = main.cpp hal/led_controller.cpp hal/bh1750.cpp
+SRCS = main.cpp hal/led_controller.cpp hal/bh1750.cpp hal/ili9341.cpp hal/gpio.cpp hal/font.cpp
 
 # List of object file
 OBJS = $(SRCS:.cpp=.o)
@@ -15,7 +18,7 @@ all: $(TARGET)
 
 # Link object files to target file
 $(TARGET): $(OBJS)
-	$(CXX) $(OBJS) -o $@
+	$(CXX) $(OBJS) -o $@ $(LDFLAGS)
 
 # Compile object files
 %.o: %.cpp
