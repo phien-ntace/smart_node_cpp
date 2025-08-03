@@ -8,23 +8,26 @@
 #include <vector>
 #include <time.h>
 #include <unistd.h>
+#include <sys/time.h>
+#include <cstring>
+#include <stdexcept>
+#include <gpiod.h>
 
 #include "gpio.h"
+#include "../utility.h"
 
 
 class Dht11Sensor
 {
 private:
     int gpio_number;
+    uint64_t get_current_time_us();
     GPIOCtrl *gpio;
 
-    uint64_t micros();
-    bool wait_for_level(int level, uint64_t timeout_us);
 public:
     Dht11Sensor(int gpio_number);
     ~Dht11Sensor();
-
-    int read(int& temperature, int& humidity);
+    int read(float& temperature, float& humidity);
 
 
 

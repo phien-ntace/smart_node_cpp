@@ -54,7 +54,7 @@ int main(void)
     // ILI9341 *ili9341_lcd = new ILI9341(18, 23, 0, 320, 240, 0);
     // ili9341_lcd->init_LCD();
     // sleep(2);
-    // cout << "Fill" << endl;
+    // cout << "Filllll" << endl;
     // ili9341_lcd->fill_screen(ILI9341_BLACK);
     // ili9341_lcd->write_string(0, 120, "Temperature: ", font_11x18, ILI9341_MAGENTA, ILI9341_BLACK);
     // ili9341_lcd->write_string(0, 150, "Humid: ", font_11x18, ILI9341_MAGENTA, ILI9341_BLACK);
@@ -65,7 +65,7 @@ int main(void)
     // ili9341_lcd->write_string(180, 150, "%", font_11x18, ILI9341_MAGENTA, ILI9341_BLACK);
     // ili9341_lcd->write_string(225, 180, "Lux", font_11x18, ILI9341_MAGENTA, ILI9341_BLACK);
     // while (1) {
-    //     cout << "LCDD" << endl; 
+    //     cout << "LCD" << endl; 
     //     sleep(1);
     // }
 
@@ -73,15 +73,14 @@ int main(void)
     Dht11Sensor *dht11_sensor = new Dht11Sensor(4);
     while (1)
     {
-        int temp, humid;
+        float temp, humid;
         int ret = dht11_sensor->read(temp, humid);
         if (ret < 0)
-            cout << "Could not read DHT11: " << ret << endl;
+            cout << "Could not read DHT11:: " << ret << endl;
         else {
-            cout << "Temperature: " << temp << endl;
-            cout << "Humid: " << humid << endl;
+            cout << "Temperature: " << temp << ", Humid: " << humid << endl;
         }
-        sleep(1);
+        sleep(3);
     }
     
 

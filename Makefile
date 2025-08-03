@@ -8,7 +8,7 @@ CXX = g++
 LDFLAGS = -lgpiod
 
 # List of source file
-SRCS = main.cpp hal/led_controller.cpp hal/bh1750.cpp hal/ili9341.cpp hal/gpio.cpp hal/font.cpp hal/dht11.cpp
+SRCS = main.cpp hal/led_controller.cpp hal/bh1750.cpp hal/ili9341.cpp hal/gpio.cpp hal/font.cpp hal/dht11.cpp utility.cpp
 
 # List of object file
 OBJS = $(SRCS:.cpp=.o)

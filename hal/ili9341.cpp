@@ -19,11 +19,11 @@ int ILI9341::hardware_config()
 {
     // Config DC pin
     dc_pin_ctrl = new GPIOCtrl(this->dc_pin, "dc-pin");
-    dc_pin_ctrl->set_dir_output();
+    dc_pin_ctrl->set_dir_output(0);
 
     // Config Reset pin
     reset_pin_ctrl = new GPIOCtrl(this->reset_pin, "reset-pin");
-    reset_pin_ctrl->set_dir_output();
+    reset_pin_ctrl->set_dir_output(0);
 
     // Config SPI
     string dev_spi_path = "/dev/spidev0." + to_string(this->chip_id);
