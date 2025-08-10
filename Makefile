@@ -5,10 +5,10 @@ TARGET = smart_node
 CXX = g++
 
 # Linker flags
-LDFLAGS = -lgpiod
+LDFLAGS = -lgpiod -lpaho-mqttpp3 -lpaho-mqtt3as
 
 # List of source file
-SRCS = main.cpp hal/led_controller.cpp hal/bh1750.cpp hal/ili9341.cpp hal/gpio.cpp hal/font.cpp hal/dht11.cpp utility.cpp
+SRCS = main.cpp hal/led_controller.cpp hal/bh1750.cpp hal/ili9341.cpp hal/gpio.cpp hal/font.cpp hal/dht11.cpp utility.cpp mqtt/mqtt_client.cpp 
 
 # List of object file
 OBJS = $(SRCS:.cpp=.o)

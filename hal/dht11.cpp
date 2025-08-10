@@ -24,7 +24,7 @@ int Dht11Sensor::read(float& temperature, float& humidity)
     gpio->set_dir_output(0);
     usleep(18000); 
     gpio->set_value(1);
-    usleep(20); // 20us
+    usleep(25); // 25us
 
     gpio->set_dir_input();
 
