@@ -157,7 +157,7 @@ int main(void)
     ili_lcd->write_string(225, 180, "Lux", font_11x18, ILI9341_MAGENTA, ILI9341_BLACK);
 
     // Init MQTT
-    const string SERVER_ADDRESS = "ssl://2d4140df546f4ac3aefa3c4f2dd163bc.s1.eu.hivemq.cloud:8883";
+    const string SERVER_ADDRESS = "ssl://xxx.s1.eu.hivemq.cloud:8883";
     const string CLIENT_ID = "pi5_client";
     const string USERNAME = "smartnode";
     const string PASSWORD = "Smartnode123";
@@ -298,7 +298,7 @@ void thread_send_to_mqtt(void)
             hour, minute, second, cur_light_level, cur_temp, (int)cur_humid);
         // cout << "MQTT:" << data << endl;
         mqtt_node->publish(TOPIC_PUBLISH, 1, data);
-        
+
         sleep(10);
     }    
 }
