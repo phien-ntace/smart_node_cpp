@@ -44,6 +44,26 @@ This project uses a **Raspberry Pi 5** to:
 | GND       | GND                                 |
 | VCC       | 5V                                  |
 
+### 🔹 Paho MQTT
+- sudo apt update
+- sudo apt install git cmake build-essential libssl-dev
+#### Paho MQTT C
+##### Clone Paho MQTT C
+- git clone https://github.com/eclipse/paho.mqtt.c.git
+- cd paho.mqtt.c
+##### Build
+- cmake -Bbuild -H. -DPAHO_WITH_SSL=TRUE
+- sudo cmake --build build/ --target install
+- sudo ldconfig
+#### Paho MQTT C++
+##### Clone Paho MQTT C++
+- cd ..
+- git clone https://github.com/eclipse/paho.mqtt.cpp.git
+- cd paho.mqtt.cpp
+##### Build
+- cmake -Bbuild -H. -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_STATIC=FALSE
+- sudo cmake --build build/ --target install
+- sudo ldconfig
 ---
 
 ## Features
