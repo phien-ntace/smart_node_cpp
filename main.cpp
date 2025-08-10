@@ -105,7 +105,7 @@ int main(void)
     // }
 
     // ************** Test MQTT *******************
-    // const string SERVER_ADDRESS = "ssl://2d4140df546f4ac3aefa3c4f2dd163bc.s1.eu.hivemq.cloud:8883";
+    // const string SERVER_ADDRESS = "ssl://xxx.s1.eu.hivemq.cloud:8883";
     // const string CLIENT_ID = "pi5_client";
     // const string USERNAME = "smartnode";
     // const string PASSWORD = "Smartnode123";
